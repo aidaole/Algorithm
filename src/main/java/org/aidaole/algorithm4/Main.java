@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         Integer[] arr = RandomUtil.createIntArr(10);
-        AbstractSort sort = new QuickSort();
+        AbstractSort sort = new HeapSort();
         sort.show(arr);
         sort.sort(arr);
         sort.show(arr);

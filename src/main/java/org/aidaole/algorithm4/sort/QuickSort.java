@@ -18,7 +18,6 @@ public class QuickSort extends AbstractSort {
     // 1. 为避免数组是有序的，选取最后一个元素作为标准，最好是经过随机选择的数然后和最后一个交换作为标准
     // 2. 如果数组中包含大量重复的数，应该在partition中分为三个部分，小于，等于，大于的三个部分。然后将小于和大于两部分继续切分。荷兰国旗问题
     // 3. 当切分是小数组的时候，使用插入排序替换
-    // 4. 理论上每次选择的数是中位数效果最好，但是选择中位数有一定代价，一般是选按照3步长来选标准值
     private int partition(Comparable[] arr, int left, int right) {
         int index = left;
         for (int i = left; i <= right; i++) {
