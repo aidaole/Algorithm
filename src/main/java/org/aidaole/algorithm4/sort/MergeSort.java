@@ -9,10 +9,11 @@ public class MergeSort extends AbstractSort {
     @Override
     public void sort(Comparable[] arr) {
         temp = new Comparable[arr.length];
+//        sort(arr)
         sort2(arr);
     }
 
-    // 自顶向下
+    // 自顶向下（递归）
     private void sort(Comparable[] arr, int left, int right) {
         if (left >= right) return;
         int mid = left + (right - left) / 2;
@@ -23,7 +24,6 @@ public class MergeSort extends AbstractSort {
 
     // 自底向上
     public void sort2(Comparable[] arr) {
-        temp = new Comparable[arr.length];
         for (int sz = 1; sz < arr.length; sz *= 2) {
             for (int lo = 0; lo < arr.length - sz; lo += sz * 2) {
                 merge(arr, lo, lo + sz - 1, Math.min(lo + sz * 2 - 1, arr.length - 1));
@@ -31,7 +31,9 @@ public class MergeSort extends AbstractSort {
         }
     }
 
-
+    /**
+     * merge过程是将两个已经排序的数组合并到长度更长的一个数组中，时间复杂度为 n
+     */
     private void merge(Comparable[] arr, int left, int mid, int right) {
         int i = left;
         int j = mid + 1;

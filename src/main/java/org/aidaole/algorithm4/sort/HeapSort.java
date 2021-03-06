@@ -16,10 +16,11 @@ public class HeapSort extends AbstractSort {
         }
     }
 
+    // 下沉操作：在 i*2+1和i*2+2中选择一个更大的更位置i的交换，如果交换成功则继续下沉
     private void sink(Comparable[] arr, int i, int len) {
         while (i * 2 + 1 <= len) {
             int j = i * 2 + 1;
-            if (j < len && less(arr[j], arr[j+1])) j++;
+            if (j + 1 <= len && less(arr[j], arr[j + 1])) j++;
             if (!less(arr[i], arr[j])) break;
             exch(arr, i, j);
             i = j;
